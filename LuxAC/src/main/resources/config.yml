@@ -1,0 +1,103 @@
+# LuxAC Konfiguration
+
+# NoFall Check - Erkennt wenn Spieler keinen Fallschaden nehmen
+checks:
+  nofall:
+    enabled: true
+    violation-limit: 5  # Anzahl der Verstöße bevor Aktion ausgeführt wird
+
+  # Fly Check - Erkennt wenn Spieler ohne Erlaubnis fliegen
+  fly:
+    enabled: true
+    violation-limit: 10
+
+  # Jesus Check - Erkennt wenn Spieler auf Wasser laufen
+  jesus:
+    enabled: true
+    violation-limit: 5
+
+  # Speed Check - Erkennt erhöhte Bewegungsgeschwindigkeit
+  speed:
+    enabled: true
+    violation-limit: 8
+    max-speed: 7.0  # Maximale Geschwindigkeit in Blöcken pro Sekunde (Normal: ~5.6)
+
+  # BadPacket Checks - Erkennen ungültige oder manipulierte Netzwerk-Packets
+  badpackets:
+    # BadpacketA - Ungültige Pitch-Werte (außerhalb -90 bis 90 Grad)
+    badpacketA:
+      enabled: true
+      violation-limit: 5
+
+    # BadpacketB - Doppelte Position Packets
+    badpacketB:
+      enabled: true
+      violation-limit: 10
+
+    # BadpacketC - Unmögliche Bewegungen (Teleport ohne Grund)
+    badpacketC:
+      enabled: true
+      violation-limit: 5
+
+    # BadpacketD - Zu viele Packets ohne Bewegung
+    badpacketD:
+      enabled: true
+      violation-limit: 8
+
+    # BadpacketE - Unmögliche Yaw-Änderungen
+    badpacketE:
+      enabled: true
+      violation-limit: 5
+
+    # BadpacketF - Ground-Spoofing (falscher onGround Status)
+    badpacketF:
+      enabled: true
+      violation-limit: 10
+
+  # Combat Checks - Kampf-bezogene Cheats
+  combat:
+    # AntiKockback - Reduzierter oder fehlender Knockback
+    antikockback:
+      enabled: true
+      violation-limit: 8
+
+    # AutoTotem - Automatisches Totem-Switching
+    autototem:
+      enabled: true
+      violation-limit: 5
+
+    # KillAura - Multi-Target Angriffe und unmögliche Hit-Winkel
+    killaura:
+      enabled: true
+      violation-limit: 10
+
+    # Reach - Erhöhte Angriffsreichweite
+    reach:
+      enabled: true
+      violation-limit: 5
+
+  # Player Checks - Spieler-Aktionen
+  player:
+    # FastEat - Zu schnelles Essen/Trinken
+    fasteat:
+      enabled: true
+      violation-limit: 5
+
+  # Place Checks - Block-Platzierung
+  place:
+    # FastPlace - Zu schnelles Block-Platzieren
+    fastplace:
+      enabled: true
+      violation-limit: 8
+
+  # Aim Checks - Ziel-Erkennung
+  aim:
+    # AutoAim - Automatisches Zielen (Aimbot)
+    autoaim:
+      enabled: true
+      violation-limit: 5
+
+    # BowAimBot - Automatisches Zielen mit Bögen
+    bowaimbot:
+      enabled: true
+      violation-limit: 5

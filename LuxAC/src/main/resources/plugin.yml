@@ -1,0 +1,17 @@
+name: LuxAC
+version: '${project.version}'
+main: org.luxac.LuxAC
+api-version: '1.21'
+load: STARTUP
+authors: [Lennard]
+description: Minecraft AntiCheat
+commands:
+  luxac:
+    description: LuxAC Hauptbefehl
+    usage: /luxac
+    aliases: [lac, luxanticheat]
+
+permissions:
+  luxac.bypass:
+    description: Bypass für alle AntiCheat Checks
+    default: op
